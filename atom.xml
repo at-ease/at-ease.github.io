@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://at-ease.github.io/"/>
-  <updated>2016-06-13T14:04:25.000Z</updated>
+  <updated>2016-06-13T14:19:22.000Z</updated>
   <id>http://at-ease.github.io/</id>
   
   <author>
@@ -16,15 +16,132 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>jljklj</title>
+    <link href="http://at-ease.github.io/2016/06/13/jljklj%20copy%202/"/>
+    <id>http://at-ease.github.io/2016/06/13/jljklj copy 2/</id>
+    <published>2016-06-13T14:18:25.000Z</published>
+    <updated>2016-06-13T14:19:22.000Z</updated>
+    
+    <content type="html">&lt;p&gt;f粉丝扥方东方森&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;f粉丝扥方东方森&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>lnmp</title>
     <link href="http://at-ease.github.io/2016/06/13/lnmp-1/"/>
     <id>http://at-ease.github.io/2016/06/13/lnmp-1/</id>
     <published>2016-06-13T14:04:25.000Z</published>
-    <updated>2016-06-13T14:04:25.000Z</updated>
+    <updated>2016-06-13T14:19:54.000Z</updated>
     
-    <content type="html"></content>
+    <content type="html">&lt;p&gt;lnmp的全名是linux+nginx+mysql+php，既然是全面优化那我们就从linux系统的选择入手。debian系统可以算是linux各分支中做的比较突出的一类，连谷歌都抛弃linux订制，由此可见debian系统之优秀，相较其它linux系统debian具有稳定、占用资源少对于网站web环境来说这些正是我们所需要的，其中debian6版本算是这一优点的集中体现。目前市面上有很多的安装包，其中军哥的lnmp是被站长使用较多的一种。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;也许有朋友会问小三啊，为啥不用lanmp呢？ 参考：[lnmp和lnmpa性能测试](http://m.baidu.com/from=1099b/bd_page_type=1/ssid=0/uid=0/pu=usm%400%2Csz%401320_2001%2Cta%40iphone_1_9.3_3_601/baiduid=A48FE8EB2515EC21405C18ECD3256ECB/w=0_10_512+lnmp/t=iphone/l=3/tc?m=8&amp;amp;ntc=1&amp;amp;srd=1&amp;amp;dict=30&amp;amp;title=lnmp%25u5168%25u9762%25u4F18%25u5316%25u96C6%25u5408nginx%2Bmysql%2Bphp&amp;amp;tch=124.250.190.851.2.428%252C124.266.270.850.1.185&amp;amp;clk_info=%257B%2522srcid%2522%253A%2522www_normal%2522%252C%2522tplname%2522%253A%2522www_normal%2522%252C%2522t%2522%253A1465093843301%252C%2522xpath%2522%253A%2522div-a-h3%2522%257D&amp;amp;eqid=9c304b9b82d450001000000157538e93&amp;amp;wd=&amp;amp;tcid=ip1z7d9e&amp;amp;src=http%3A%2F%2Fwww.zxsdw.com%2Findex.php%2Farchives%2F1111%2F)用nginx的目地是为提高并发能力。 在同一台机器上使用nginx反向 apache，等于脱裤子放屁。+_+*
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;一：lnmp的nginx优化&lt;/p&gt;
+&lt;p&gt;主要是修改 /usr/local/nginx/conf/nginx.conf&lt;/p&gt;
+&lt;p&gt;1.军哥的lnmp安装包中nginx的&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;worker_processes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;默认设置是1，这里我们要根据服务器cpu具体的核心数来优化。通常4核的CPU我会把值设为3。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;**2核CPU，开启2个进程**worker_processes 2; worker_cpu_affinity 01 10; **4核CPU，开3个进程**worker_processes 3; worker_cpu_affinity [0010 0100 1000;](tel:0010%200100%201000;%208)**[8](tel:0010%200100%201000;%208)核CPU，开8个进程**worker_processes 8; worker_cpu_affinity [00000001](tel:00000001) [00000010](tel:00000010) [00000100](tel:00000100) [00001000](tel:00001000) [00010000](tel:00010000) [00100000](tel:00100000) [01000000](tel:01000000) [10000000](tel:10000000); 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;worker_processes参数解析可参考：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://m.baidu.com/from=1099b/bd_page_type=1/ssid=0/uid=0/pu=usm%400%2Csz%401320_2001%2Cta%40iphone_1_9.3_3_601/baiduid=A48FE8EB2515EC21405C18ECD3256ECB/w=0_10_512+lnmp/t=iphone/l=3/tc?m=8&amp;amp;ntc=1&amp;amp;srd=1&amp;amp;dict=30&amp;amp;title=lnmp%25u5168%25u9762%25u4F18%25u5316%25u96C6%25u5408nginx%2Bmysql%2Bphp&amp;amp;tch=124.250.190.851.2.428%252C124.266.270.850.1.185&amp;amp;clk_info=%257B%2522srcid%2522%253A%2522www_normal%2522%252C%2522tplname%2522%253A%2522www_normal%2522%252C%2522t%2522%253A1465093843301%252C%2522xpath%2522%253A%2522div-a-h3%2522%257D&amp;amp;eqid=9c304b9b82d450001000000157538e93&amp;amp;wd=&amp;amp;tcid=ip1z7d9e&amp;amp;src=http%3A%2F%2Fwww.zxsdw.com%2Findex.php%2Farchives%2F860%2F&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;worker_processes详解&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.&lt;strong&gt;worker_rlimit_nofile参数&lt;/strong&gt;默认是5xxxx.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;worker_rlimit_nofile 65535;  events  {   use epoll;   worker_connections 32700;  }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;worker_rlimit_nofile参数讲解可参考：&lt;a href=&quot;http://m.baidu.com/from=1099b/bd_page_type=1/ssid=0/uid=0/pu=usm%400%2Csz%401320_2001%2Cta%40iphone_1_9.3_3_601/baiduid=A48FE8EB2515EC21405C18ECD3256ECB/w=0_10_512+lnmp/t=iphone/l=3/tc?m=8&amp;amp;ntc=1&amp;amp;srd=1&amp;amp;dict=30&amp;amp;title=lnmp%25u5168%25u9762%25u4F18%25u5316%25u96C6%25u5408nginx%2Bmysql%2Bphp&amp;amp;tch=124.250.190.851.2.428%252C124.266.270.850.1.185&amp;amp;clk_info=%257B%2522srcid%2522%253A%2522www_normal%2522%252C%2522tplname%2522%253A%2522www_normal%2522%252C%2522t%2522%253A1465093843301%252C%2522xpath%2522%253A%2522div-a-h3%2522%257D&amp;amp;eqid=9c304b9b82d450001000000157538e93&amp;amp;wd=&amp;amp;tcid=ip1z7d9e&amp;amp;src=http%3A%2F%2Fwww.zxsdw.com%2Findex.php%2Farchives%2F742%2F&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;nginx优化参数详解&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;添加防压力测试&lt;br&gt;if ($http_user_agent ~ ApacheBench|WebBench|Jmeter|must-revalidate|Havij) {retun 503;}&lt;br&gt;添加针对CVE-2013-4547链接空格的补丁&lt;br&gt;if ($request_uri ~ “ “) {return 444;}&lt;/p&gt;
+&lt;p&gt;二：lnmp的mysql优化用/usr/local/mysql/share/mysql/目录下的my-large.cnf 文件替换根目录etc下的my.cnf文件&lt;/p&gt;
+&lt;p&gt;my-huge.cnf: 适合1GB - 2GB RAM主机使用&lt;br&gt;my-large.cnf: 适合 512MB RAM使用&lt;br&gt;my-medium.cnf: 只有 32MB - 64MB RAM使用&lt;br&gt;my-small.cnf:小于64MB 用，MySQL会占用很少资源&lt;br&gt;my-innodb-heavy-4G.cnf 适合4G以上使用&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;禁用mysql日志： 修改 /etc/my.cnf 文件 在log-bin=mysql-bin和binlog_format=mixed  这两行前面加#注释掉即可。  在query_cache_size= 16M下面添加一行： tmp_table_size = 200M
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;mysql参数讲解可参考：&lt;a href=&quot;http://m.baidu.com/from=1099b/bd_page_type=1/ssid=0/uid=0/pu=usm%400%2Csz%401320_2001%2Cta%40iphone_1_9.3_3_601/baiduid=A48FE8EB2515EC21405C18ECD3256ECB/w=0_10_512+lnmp/t=iphone/l=3/tc?m=8&amp;amp;ntc=1&amp;amp;srd=1&amp;amp;dict=30&amp;amp;title=lnmp%25u5168%25u9762%25u4F18%25u5316%25u96C6%25u5408nginx%2Bmysql%2Bphp&amp;amp;tch=124.250.190.851.2.428%252C124.266.270.850.1.185&amp;amp;clk_info=%257B%2522srcid%2522%253A%2522www_normal%2522%252C%2522tplname%2522%253A%2522www_normal%2522%252C%2522t%2522%253A1465093843301%252C%2522xpath%2522%253A%2522div-a-h3%2522%257D&amp;amp;eqid=9c304b9b82d450001000000157538e93&amp;amp;wd=&amp;amp;tcid=ip1z7d9e&amp;amp;src=http%3A%2F%2Fwww.zxsdw.com%2Findex.php%2Farchives%2F858%2F&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;mysql优化&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;三：lnmp的php相关参数优化&lt;/p&gt;
+&lt;p&gt;优化主要是修改/usr/local/php/etc/目录下的php-fpm.conf和php.ini文件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.php-fpm.conf参数优化&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;删除value name=”display_errors” 这一行的代码，防止坏人从PHP错误中找到漏洞。&lt;/p&gt;
+&lt;p&gt;max_children默认参数是开启5个进程。数值要根据内存大小来定，每一个php-cgi所耗费的内存在20M左右。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;126M内存默认即可 256M 10个 512M 20个 1G 40个
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;request_terminate_timeout参数默认是0s，修改为300s&lt;/p&gt;
+&lt;p&gt;rlimit_files参数默认5xxxx，修改为65535&lt;/p&gt;
+&lt;p&gt;php-fpm参数讲解可参考：&lt;a href=&quot;http://m.baidu.com/from=1099b/bd_page_type=1/ssid=0/uid=0/pu=usm%400%2Csz%401320_2001%2Cta%40iphone_1_9.3_3_601/baiduid=A48FE8EB2515EC21405C18ECD3256ECB/w=0_10_512+lnmp/t=iphone/l=3/tc?m=8&amp;amp;ntc=1&amp;amp;srd=1&amp;amp;dict=30&amp;amp;title=lnmp%25u5168%25u9762%25u4F18%25u5316%25u96C6%25u5408nginx%2Bmysql%2Bphp&amp;amp;tch=124.250.190.851.2.428%252C124.266.270.850.1.185&amp;amp;clk_info=%257B%2522srcid%2522%253A%2522www_normal%2522%252C%2522tplname%2522%253A%2522www_normal%2522%252C%2522t%2522%253A1465093843301%252C%2522xpath%2522%253A%2522div-a-h3%2522%257D&amp;amp;eqid=9c304b9b82d450001000000157538e93&amp;amp;wd=&amp;amp;tcid=ip1z7d9e&amp;amp;src=http%3A%2F%2Fwww.zxsdw.com%2Findex.php%2Farchives%2F204%2F%3Fpage%3D2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;php-fpm详解&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.php.ini参数优化&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;disable_functions = 默认禁用了一些参数，PHP中有一些函数的风险性还是相当大的,如果允许这些函数执行,当PHP 程序出现漏洞时,损失是非常严重的&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fsockopen这个参数用的比较多，可以删除。  另外从安全方面考虑可隐藏PHP版本号 将文件里面的 expose_php = On  修改为 expose_php = Off 即可  将display_errors =On改为Off 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后修改最大连接数使重启后也可生效，在/etc/profile 最后增加一行 ulimit -SHn 65535&lt;/p&gt;
+&lt;p&gt;另外军哥的LNMP安装包里有一个eAccelerator的安装文件。最好装一下。这个是加速PHP缓存的还不错。&lt;br&gt;关于eAccelerator的设置我就给出两个修改的地方吧：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;eaccelerator.shm_size=&amp;quot;16&amp;quot; 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;#默认是占用16M共享内存，军哥好像是1，你就改成16吧。大小也可根据你的内存情况设置。&lt;/p&gt;
+&lt;p&gt;另外军哥默认是eaccelerator缓存目录是/usr/local/eaccelerator_cache，这样用硬盘缓存的话，某些情况会影响php的响应时间。我们可以直接放到共享内存里面老。&lt;br&gt;运行命令：mkdir -p /dev/shm/eaccelerator_cache&lt;br&gt;修改目录为以下就OK了。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;eaccelerator.cache_dir=&amp;quot;/dev/shm/eaccelerator_cache&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;最后全部修改完记得重启生效：/root/lnmp restart&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;老外vps无特别说明(即使用优惠码)都按优惠后的价格续费。此vps无爱可看之前其它文章 发现Out of Stock说明缺货中，可考虑购买其它VPS。自备谷歌浏览器有简单的翻译功能。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;http://m.baidu.com/from=1099b/bd_page_type=1/ssid=0/uid=0/pu=usm%400%2Csz%401320_2001%2Cta%40iphone_1_9.3_3_601/baiduid=A48FE8EB2515EC21405C18ECD3256ECB/w=0_10_512+lnmp/t=iphone/l=3/tc?m=8&amp;amp;ntc=1&amp;amp;srd=1&amp;amp;dict=30&amp;amp;title=lnmp%25u5168%25u9762%25u4F18%25u5316%25u96C6%25u5408nginx%2Bmysql%2Bphp&amp;amp;tch=124.250.190.851.2.428%252C124.266.270.850.1.185&amp;amp;clk_info=%257B%2522srcid%2522%253A%2522www_normal%2522%252C%2522tplname%2522%253A%2522www_normal%2522%252C%2522t%2522%253A1465093843301%252C%2522xpath%2522%253A%2522div-a-h3%2522%257D&amp;amp;eqid=9c304b9b82d450001000000157538e93&amp;amp;wd=&amp;amp;tcid=ip1z7d9e&amp;amp;src=http%3A%2F%2Fwww.zxsdw.com%2Findex.php%2Farchives%2F881%2F&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;7&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;买老外的域名、vps都需美元。有信用卡可直接购买。无卡无美元的注册Paypal到淘宝找人充美元即可。老外VPS购买教程参考：&lt;a href=&quot;http://www.zxsdw.com/index.php/archives/259/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.zxsdw.com/index.php/archives/259/&lt;/a&gt; &lt;/p&gt;
+&lt;h4 id=&quot;已有-7-条评论-»&quot;&gt;&lt;a href=&quot;#已有-7-条评论-»&quot; class=&quot;headerlink&quot; title=&quot;已有 7 条评论 »&quot;&gt;&lt;/a&gt;已有 7 条评论 »&lt;/h4&gt;&lt;p&gt;张小三资源网QQ交流群：&lt;a href=&quot;tel:292348362&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;292348362&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;VPS新手教程&quot;&gt;&lt;a href=&quot;#VPS新手教程&quot; class=&quot;headerlink&quot; title=&quot;VPS新手教程&quot;&gt;&lt;/a&gt;VPS新手教程&lt;/h3&gt;&lt;p&gt;点击查看更多&lt;/p&gt;
+&lt;h3 id=&quot;最新文章&quot;&gt;&lt;a href=&quot;#最新文章&quot; class=&quot;headerlink&quot; title=&quot;最新文章&quot;&gt;&lt;/a&gt;最新文章&lt;/h3&gt;&lt;p&gt;点击查看更多&lt;/p&gt;
+&lt;h3 id=&quot;最近回复&quot;&gt;&lt;a href=&quot;#最近回复&quot; class=&quot;headerlink&quot; title=&quot;最近回复&quot;&gt;&lt;/a&gt;最近回复&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://m.baidu.com/from=1099b/bd_page_type=1/ssid=0/uid=0/pu=usm%400%2Csz%401320_2001%2Cta%40iphone_1_9.3_3_601/baiduid=A48FE8EB2515EC21405C18ECD3256ECB/w=0_10_512+lnmp/t=iphone/l=3/tc?m=8&amp;amp;ntc=1&amp;amp;srd=1&amp;amp;dict=30&amp;amp;title=lnmp%25u5168%25u9762%25u4F18%25u5316%25u96C6%25u5408nginx%2Bmysql%2Bphp&amp;amp;tch=124.250.190.851.2.428%252C124.266.270.850.1.185&amp;amp;clk_info=%257B%2522srcid%2522%253A%2522www_normal%2522%252C%2522tplname%2522%253A%2522www_normal%2522%252C%2522t%2522%253A1465093843301%252C%2522xpath%2522%253A%2522div-a-h3%2522%257D&amp;amp;eqid=9c304b9b82d450001000000157538e93&amp;amp;wd=&amp;amp;tcid=ip1z7d9e&amp;amp;src=http%3A%2F%2Fwww.zxsdw.com%2F&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;张小三资源网&lt;/a&gt;is powered by Typecho))) &lt;a href=&quot;http://m.baidu.com/from=1099b/bd_page_type=1/ssid=0/uid=0/pu=usm%400%2Csz%401320_2001%2Cta%40iphone_1_9.3_3_601/baiduid=A48FE8EB2515EC21405C18ECD3256ECB/w=0_10_512+lnmp/t=iphone/l=3/tc?m=8&amp;amp;ntc=1&amp;amp;srd=1&amp;amp;dict=30&amp;amp;title=lnmp%25u5168%25u9762%25u4F18%25u5316%25u96C6%25u5408nginx%2Bmysql%2Bphp&amp;amp;tch=124.250.190.851.2.428%252C124.266.270.850.1.185&amp;amp;clk_info=%257B%2522srcid%2522%253A%2522www_normal%2522%252C%2522tplname%2522%253A%2522www_normal%2522%252C%2522t%2522%253A1465093843301%252C%2522xpath%2522%253A%2522div-a-h3%2522%257D&amp;amp;eqid=9c304b9b82d450001000000157538e93&amp;amp;wd=&amp;amp;tcid=ip1z7d9e&amp;amp;src=http%3A%2F%2Fwww.zxsdw.com%2Fsitemap.xml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网站地图&lt;/a&gt;&lt;/p&gt;
+</content>
     
     <summary type="html">
+    
+      &lt;p&gt;lnmp的全名是linux+nginx+mysql+php，既然是全面优化那我们就从linux系统的选择入手。debian系统可以算是linux各分支中做的比较突出的一类，连谷歌都抛弃linux订制，由此可见debian系统之优秀，相较其它linux系统debian具有稳定
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Introduction</title>
+    <link href="http://at-ease.github.io/2016/06/13/1write/"/>
+    <id>http://at-ease.github.io/2016/06/13/1write/</id>
+    <published>2016-06-13T14:04:25.000Z</published>
+    <updated>2016-06-13T14:21:00.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Quick-Markdown-Guide&quot;&gt;&lt;a href=&quot;#Quick-Markdown-Guide&quot; class=&quot;headerlink&quot; title=&quot;Quick Markdown Guide&quot;&gt;&lt;/a&gt;Quick Markdown Guide&lt;/h2&gt;&lt;p&gt;This is the first paragraph.&lt;/p&gt;
+&lt;p&gt;Another paragraph, separated by a new line. This text is &lt;em&gt;italic&lt;/em&gt;, &lt;strong&gt;bold&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;bold &amp;amp; italic&lt;/em&gt;&lt;/strong&gt;, &lt;code&gt;monospace&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The syntax for lists is simple:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A list item.&lt;/li&gt;
+&lt;li&gt;Another item.&lt;/li&gt;
+&lt;li&gt;The last one.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here’s an ordered list:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;First item.&lt;/li&gt;
+&lt;li&gt;Second item.&lt;/li&gt;
+&lt;li&gt;Third item.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;An &lt;a href=&quot;http://example.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;inline link&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This is an automatic link: &lt;a href=&quot;http://example.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://example.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Alternatively, you can use &lt;a href=&quot;http://example.com&quot; title=&quot;Optional Title Here&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;reference link&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;An image:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://1writerapp.com/welcome/photo.png&quot; alt=&quot;Alt text&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A blockquote.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bold text&lt;/strong&gt; in a quote.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Nested blockquote.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Hashtags&quot;&gt;&lt;a href=&quot;#Hashtags&quot; class=&quot;headerlink&quot; title=&quot;Hashtags&quot;&gt;&lt;/a&gt;Hashtags&lt;/h2&gt;&lt;p&gt;A hashtag is a word or a phrase prefixed with the symbol &lt;code&gt;#&lt;/code&gt;, used to group related documents. You can insert as many hashtags as you want in a document: #guide #markdown.&lt;/p&gt;
+&lt;h2 id=&quot;Checklist&quot;&gt;&lt;a href=&quot;#Checklist&quot; class=&quot;headerlink&quot; title=&quot;Checklist&quot;&gt;&lt;/a&gt;Checklist&lt;/h2&gt;&lt;p&gt;Create a list of things to do or topics to research by making a list with items marked as either &lt;code&gt;[ ]&lt;/code&gt; or &lt;code&gt;[x]&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[ ] Task 1.&lt;/li&gt;
+&lt;li&gt;[ ] Task 2.&lt;/li&gt;
+&lt;li&gt;[x] A completed task.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Quick-Markdown-Guide&quot;&gt;&lt;a href=&quot;#Quick-Markdown-Guide&quot; class=&quot;headerlink&quot; title=&quot;Quick Markdown Guide&quot;&gt;&lt;/a&gt;Quick Markdown Guide&lt;/h2&gt;&lt;
     
     </summary>
     
